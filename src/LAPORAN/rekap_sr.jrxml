@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="244d9c56-61e4-4534-b206-f225b640d762">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tgl1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+     DATE_FORMAT(srbaru.tgl, '%d/%m/%Y'),
+     srbaru.nomor_sr,
+     srbaru.s_location,
+     srbaru.deskripsi,
+     srbaru.jml,
+     srbaru.status,
+     lokasi.nama_toko
+FROM
+     srbaru,lokasi
+WHERE
+     srbaru.s_location = lokasi.s_location
+AND
+     srbaru.tgl BETWEEN $P{tgl1} and $P{tgl2}]]>
+	</queryString>
+	<field name="DATE_FORMAT(srbaru.tgl, &apos;%d/%m/%Y&apos;)" class="java.lang.String"/>
+	<field name="nomor_sr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="s_location" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deskripsi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jml" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_toko" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="192" y="0" width="309" height="50" uuid="6b80a209-3248-4d24-80e8-c3f379f05bc4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Service Request]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="192" height="50" uuid="0930519d-6204-408f-b10d-f4d58767a22b"/>
+				<imageExpression><![CDATA["\SR.gambar\Hero_Group.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="0" width="51" height="33" uuid="ac0f50f6-e027-4a27-bb05-e4beb8c977c1"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Periode :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="0" width="41" height="33" uuid="23bdced1-0552-4609-9441-f9b0e372b9d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[s/d]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="206" y="0" width="100" height="33" uuid="baa3afad-82e4-4277-b505-061058dfe649"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{tgl1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="0" width="100" height="33" uuid="08beb867-73d4-4960-a723-2054b1fa24d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{tgl2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="7" width="68" height="20" backcolor="#99CCFF" uuid="15942f74-da59-4827-a86b-5ae6e74ca2a3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="136" y="7" width="123" height="20" backcolor="#99CCFF" uuid="8d066ef4-ef40-49da-ab62-1adc4b529070"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="259" y="7" width="141" height="20" backcolor="#99CCFF" uuid="c652a872-a271-4d76-9ce9-8785cfcc79fe"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="400" y="7" width="76" height="20" backcolor="#99CCFF" uuid="92175c65-4dec-44d6-bf3d-c9eab0ac335a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="476" y="7" width="79" height="20" backcolor="#99CCFF" uuid="ef907a43-b7f3-49b3-84ec-1d86674e1fee"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="7" width="68" height="20" uuid="731c787f-5891-45a4-9f25-1f069cd551ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tgl SR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="7" width="123" height="20" uuid="5b7deec9-c90a-4211-be3c-61b27f54de83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Toko]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="7" width="141" height="20" uuid="286bf2f4-ec23-4900-97ef-1e45b3b6e452"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Deskripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="7" width="76" height="20" uuid="385bc0ef-2b9c-4989-b158-91a4ee2364f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="7" width="79" height="20" uuid="e388c7e7-6a39-4df9-b9dd-2717349e94b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="68" y="7" width="68" height="20" backcolor="#99CCFF" uuid="307880ee-da61-481c-affc-f22742fb56e4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="68" y="7" width="68" height="20" uuid="48dbd27a-24d8-428e-b1a8-655e2e464e5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nomor SR]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="68" height="20" uuid="26658c6a-b97f-4ffe-9d24-db9923349c87"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="259" y="0" width="141" height="20" uuid="9b70dd4c-5750-4adf-91f8-a5ba587c8b67"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="400" y="0" width="76" height="20" uuid="ee414e71-31db-41b0-ae78-ce3bf2596060"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="136" y="0" width="123" height="20" uuid="5f9c1b6d-fae7-4f6d-8549-69d7d054ce26"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="476" y="0" width="79" height="20" uuid="9d00e924-d6bf-424a-9c9a-dea9190c53d9"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="68" height="20" uuid="71702725-23d0-44b4-8596-92541d913c80"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATE_FORMAT(srbaru.tgl, '%d/%m/%Y')}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="0" width="123" height="20" uuid="b845ba8b-c337-4064-9c2f-85a3814e2765"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_toko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="0" width="141" height="20" uuid="95bd9afe-5f91-4375-a0b7-acdd4c61db0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{deskripsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="76" height="20" uuid="75eb5eaa-ff8a-4600-99ed-4fcb914cf1a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jml}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="79" height="20" uuid="419061bb-320b-45c1-9a68-3190e0a466f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="68" y="0" width="68" height="20" uuid="b739b75d-7777-4794-813c-23acaa32385f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="68" y="0" width="68" height="20" uuid="d8d4fe84-cfe1-402e-a2a3-e724dc03786b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomor_sr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="401" y="46" width="100" height="20" uuid="d9d8834e-ccf3-42f9-8b72-b87d02165c8c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Admin SR]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="401" y="11" width="100" height="20" uuid="2c94d57f-5db9-400d-b975-af01ace96f2b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

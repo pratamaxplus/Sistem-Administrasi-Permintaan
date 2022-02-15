@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98d76949-0d33-4997-9acb-d73f926f373f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     srbaru.`tgl` AS srbaru_tgl,
+     srbaru.`nomor_sr` AS srbaru_nomor_sr,
+     srbaru.`nama_pembuat` AS srbaru_nama_pembuat,
+     srbaru.`s_location` AS srbaru_s_location,
+     srbaru.`deskripsi` AS srbaru_deskripsi,
+     srbaru.`jml` AS srbaru_jml,
+     lokasi.`s_location` AS lokasi_s_location,
+     lokasi.`nama_toko` AS lokasi_nama_toko,
+     lokasi.`address` AS lokasi_address,
+     lokasi.`cost_center` AS lokasi_cost_center,
+     lokasi.`internal_order` AS lokasi_internal_order
+FROM
+     `srbaru` srbaru,
+     `lokasi` lokasi
+WHERE srbaru.s_location = lokasi.s_location
+AND srbaru.nomor_sr = $P{kode}]]>
+	</queryString>
+	<field name="srbaru_tgl" class="java.sql.Date"/>
+	<field name="srbaru_nomor_sr" class="java.lang.String"/>
+	<field name="srbaru_nama_pembuat" class="java.lang.String"/>
+	<field name="srbaru_s_location" class="java.lang.String"/>
+	<field name="srbaru_deskripsi" class="java.lang.String"/>
+	<field name="srbaru_jml" class="java.lang.Integer"/>
+	<field name="lokasi_s_location" class="java.lang.String"/>
+	<field name="lokasi_nama_toko" class="java.lang.String"/>
+	<field name="lokasi_address" class="java.lang.String"/>
+	<field name="lokasi_cost_center" class="java.lang.String"/>
+	<field name="lokasi_internal_order" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="210" y="0" width="327" height="37" uuid="1af23190-d09f-4bc4-a507-9340c1ec7e42"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[PT Hero Supermarket Tbk]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="187" height="50" uuid="54c14d04-140f-4484-8994-31bb788aaee0"/>
+				<imageExpression><![CDATA["\SR.gambar\Hero_Group.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="143" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="555" height="38" uuid="fbe3b776-79c7-4c38-9ce4-94d88675b109"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Request Form]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="44" width="108" height="25" backcolor="#C9C1B0" uuid="5079e51b-8a85-4bdd-b10c-d6edbc999e78"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="44" width="108" height="25" uuid="909a2323-84b6-4734-a88a-216bbfd7df53"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No SR]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="108" y="44" width="108" height="25" uuid="bb370287-ce8f-458c-b8cf-3c7ab704c56f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="108" y="44" width="108" height="25" uuid="6968e4f1-b9c0-4c21-9366-062b0c030463"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{srbaru_nomor_sr}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="69" width="108" height="25" backcolor="#C9C1B0" uuid="dc3ac1df-9e92-4c3e-8b8b-a351aa1de416"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="94" width="108" height="25" backcolor="#C9C1B0" uuid="257e7995-6b66-4f38-81c4-59af04218bb2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="69" width="108" height="25" uuid="a7ef20b2-fe5f-4760-929e-cee8790f5aad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Site Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="94" width="108" height="25" uuid="588a00ef-4f9b-4b50-9cad-59b366fdb989"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="108" y="69" width="108" height="25" uuid="106bb1a5-8249-4fc2-8847-f9fbd96f86bd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="108" y="94" width="108" height="25" uuid="d4689a83-71af-4b4b-8414-4eb08ef8edb4"/>
+			</rectangle>
+			<textField>
+				<reportElement x="108" y="69" width="108" height="25" uuid="c3aeadce-74db-477d-bf45-25007f806f50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lokasi_s_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="94" width="108" height="25" uuid="d7f72dd4-b51a-492f-9c32-957a9bdf4047"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lokasi_address}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="253" y="44" width="100" height="25" backcolor="#C9C1B0" uuid="89c44be8-6329-460d-a679-6c4d4a297275"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="253" y="94" width="100" height="25" backcolor="#C9C1B0" uuid="6531e124-ade9-42ce-a633-5cc2f98e8eb1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="253" y="69" width="100" height="25" backcolor="#C9C1B0" uuid="99fb5d39-7768-4b8a-9d8e-aaae087322eb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="254" y="45" width="100" height="25" uuid="2f4b328b-ee8b-4d3a-96e1-1c4c0ab62e1e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Toko]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="70" width="101" height="25" uuid="fe59f188-c031-4573-9ea2-0e909e042385"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cost Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="94" width="98" height="25" uuid="5b20dd6f-04df-4c41-bc83-93f9f863f351"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.O]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="353" y="44" width="201" height="25" uuid="2e079180-3f3b-42f8-9fce-aacd6e496dd7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="353" y="69" width="201" height="25" uuid="79933f15-c310-42f3-816c-be9c7d409d22"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="353" y="94" width="201" height="25" uuid="daa619ce-0dad-47ee-aed9-6c9bf1b02695"/>
+			</rectangle>
+			<textField>
+				<reportElement x="354" y="45" width="200" height="24" uuid="4aa7b054-d51e-4b5a-bc00-0ae72c644ab3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lokasi_nama_toko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="69" width="200" height="25" uuid="4ec18896-82e0-468c-b296-45b41baee0f5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lokasi_cost_center}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="94" width="200" height="25" uuid="baa0489b-02c8-4619-8cd0-25e8c812fa3c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lokasi_internal_order}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="23" y="6" width="276" height="33" backcolor="#C9C1B0" uuid="0bd922a6-083b-4f99-94b0-469f2817d98a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="23" y="6" width="276" height="33" backcolor="#FFFFFF" uuid="b0576994-51fd-42fc-93aa-58bf0688906b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Deskripsi]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="299" y="6" width="48" height="33" backcolor="#C9C1B0" uuid="8d766735-0aa7-42ed-ab2d-9859358facde"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="299" y="6" width="48" height="33" uuid="679f16ca-8d35-4c5c-aa3b-5763f883cd64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="347" y="6" width="190" height="33" backcolor="#C9C1B0" uuid="64687db0-564a-4259-a686-5c1b5fa62c14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="347" y="6" width="190" height="33" uuid="99e18098-9c36-4c56-9ee9-3d91e51caa45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement x="23" y="0" width="276" height="33" uuid="7902a234-213f-4bb6-b67e-e95e2eac1945"/>
+			</rectangle>
+			<textField>
+				<reportElement x="23" y="0" width="276" height="33" uuid="270c64b2-c211-492e-afd3-192814c8dcf5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{srbaru_deskripsi}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="299" y="0" width="48" height="33" uuid="fa72865c-e72d-4251-8c3f-da14a43820bd"/>
+			</rectangle>
+			<textField>
+				<reportElement x="299" y="0" width="48" height="33" uuid="7db0f82c-7cf5-4fb0-a1a9-37dfd172da05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{srbaru_jml}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="347" y="0" width="190" height="33" uuid="e3b7f4d5-2f06-4415-93d3-ece8b7cfd373"/>
+			</rectangle>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="96">
+			<staticText>
+				<reportElement x="92" y="33" width="383" height="63" uuid="253cfb0e-8daa-48d3-98f3-6ed9df598805"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Graha HERO, CBD Bintaro Jaya Sektor 7 Blok B7/A7 Pondok Jaya
+Pondok Aren, Tangerang Selatan 15224 - Indonesia Telp : +6221 8378 8000 Website: www.hero.co.id]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="208" splitType="Stretch">
+			<staticText>
+				<reportElement x="63" y="116" width="124" height="20" uuid="6e26a2f8-e76a-424a-b25e-758aa725f088"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Di Buat Oleh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="116" width="124" height="20" uuid="aa96295f-e07a-48dd-b071-db6be9f8c41c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Di Setujui Oleh]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="173" width="124" height="20" uuid="c708325f-8e92-4b54-b775-70280d373dbc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{srbaru_nama_pembuat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="331" y="173" width="124" height="20" uuid="d4298553-74d7-4a0f-9f2a-441ea13c38f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teritory Head]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="13" width="130" height="20" uuid="b4b7427d-b024-4808-a154-c44e7b8876e9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl di Terima Admin]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="437" y="13" width="100" height="20" uuid="d88fcdfa-eb6b-45e2-adc1-3a2410269995"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy", new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

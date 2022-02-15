@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="62f4376b-49f6-4b38-aeba-f3c22481972e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT dist_sr.nomor_sr, lokasi.nama_toko, srbaru.deskripsi, srbaru.status, DATE_FORMAT(dist_sr.tgl, '%d/%m/%Y')
+FROM
+dist_sr JOIN srbaru ON dist_sr.s_location = srbaru.s_location
+JOIN
+lokasi ON lokasi.s_location = srbaru.s_location
+ORDER by dist_sr.nomor_sr DESC]]>
+	</queryString>
+	<field name="nomor_sr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_toko" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deskripsi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE_FORMAT(dist_sr.tgl, &apos;%d/%m/%Y&apos;)" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="222" y="6" width="311" height="53" uuid="76c02da0-1740-4c72-9d04-6c1efa5cc52c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="32"/>
+				</textElement>
+				<text><![CDATA[Data Service Request]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="210" height="59" uuid="15533073-f0d2-4050-aa76-dbd1e5f2e1ea"/>
+				<imageExpression><![CDATA["\SR.gambar\Hero_Group.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="32" y="41" width="71" height="20" backcolor="#99FFFF" uuid="4a40ce4e-4369-48bc-9164-b02134d85f78"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="103" y="41" width="119" height="20" backcolor="#99FFFF" uuid="3d4a7afd-5104-4081-ad76-c8d2b7ac9e01"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="222" y="41" width="146" height="20" backcolor="#99FFFF" uuid="90e91686-1898-43ad-be17-b5012dda1a77"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="368" y="41" width="81" height="20" backcolor="#99FFFF" uuid="d2a2f050-4745-4e23-9e34-4e07e94ea5b1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="449" y="41" width="84" height="20" backcolor="#99FFFF" uuid="ab89ad38-9077-484c-9360-b2d3f846602b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="32" y="41" width="71" height="20" uuid="3c442eb3-1570-4ba7-8e90-efe27166f060"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nomor SR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="41" width="119" height="20" uuid="1414cc9d-2f4b-4716-838b-3df8cf829495"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Toko]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="41" width="146" height="20" uuid="ca686c35-b536-468b-a9a4-097469d6bcf6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Deskripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="41" width="81" height="20" uuid="f346a175-22fb-4934-a7d4-a90aed46ce1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="41" width="84" height="20" uuid="3d280701-ad11-4d29-ac84-a7fb4bccbe04"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Proses]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="32" y="0" width="71" height="23" uuid="8aafd0a4-2e2d-4f38-a4a0-9ff3f9b9e389"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="449" y="0" width="84" height="23" uuid="dd8ed3b5-f51c-41d8-9f94-f0944bf5422f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="368" y="0" width="81" height="23" uuid="a05d4cc3-aa53-499f-8eb3-81108ce39388"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="222" y="0" width="146" height="23" uuid="9b52157b-b079-4b68-8da0-2035ad5088e3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="103" y="0" width="119" height="23" uuid="bec40af3-11d5-4165-9ec2-bf99e2bbaefb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="32" y="0" width="71" height="23" uuid="971b440c-37cf-48d9-8269-5a64ab1a32e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomor_sr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="0" width="119" height="23" uuid="5c5496f3-4770-4512-a60e-453ec92b4730"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_toko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="146" height="23" uuid="73595a48-b878-4cec-a40a-1a012894565b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deskripsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="0" width="81" height="23" uuid="3c600a32-106a-445a-80ab-b8f9bc4d7ea9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="0" width="84" height="23" uuid="7441aa1b-c157-4394-a8a7-6512c2bd6d5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATE_FORMAT(dist_sr.tgl, '%d/%m/%Y')}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="92" y="39" width="383" height="63" uuid="6063a175-7b00-46bc-bf52-81fba7ef3467"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Graha HERO, CBD Bintaro Jaya Sektor 7 Blok B7/A7 Pondok Jaya
+Pondok Aren, Tangerang Selatan 15224 - Indonesia Telp : +6221 8378 8000 Website: www.hero.co.id]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="121" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="406" y="23" width="100" height="20" uuid="66cbca06-18e7-4e16-8fae-d3271bad358b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy", new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="316" y="23" width="100" height="20" uuid="ad15707a-8cc5-426f-8cf9-7ab1975ceaf7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="100" width="200" height="20" uuid="27a2a67e-cc1d-4d1b-88ee-fcad458ec733"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Admin Service Request]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="80" width="139" height="20" uuid="30898f80-418a-4736-aa88-c7498b74d837"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Adi Pratama]]></text>
+			</staticText>
+			<line>
+				<reportElement x="336" y="100" width="139" height="1" uuid="257487b6-f47a-4267-9a73-2a1998665f46"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

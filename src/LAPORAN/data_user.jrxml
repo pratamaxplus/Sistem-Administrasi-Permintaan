@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87a673a9-f8b1-4e54-9c26-80647350cfc0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     user.user_id, user.nama, user.nrp, user.s_location, user.akses,
+     lokasi.nama_toko, user.jabatan
+FROM
+     user, lokasi
+WHERE
+     user.s_location = lokasi.s_location]]>
+	</queryString>
+	<field name="user_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="s_location" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="akses" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_toko" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jabatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="207" y="0" width="313" height="46" uuid="3931a94f-e858-4085-92ea-9268ce334174"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Service Request System]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="0" width="206" height="46" uuid="01c1ac77-2558-445d-a586-9a174ba4df74"/>
+				<imageExpression><![CDATA["\SR.gambar\Hero_Group.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="470344d7-1488-47af-bc93-9fa2be124031"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Data Pengguna Aplikasi]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="53" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="33" width="59" height="20" backcolor="#99CCFF" uuid="81b95743-2ad4-483a-97db-3402ed440077"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="33" width="58" height="20" uuid="6637ffab-ef20-4fa7-ad7a-dc8d4a63f58e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID User]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="114" y="33" width="66" height="20" backcolor="#99CCFF" uuid="ce84ebbd-7d24-4556-9d3d-f83a0c26d43d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="114" y="33" width="66" height="20" uuid="aeafe26c-0ffd-4a3f-b80b-dceaa6ad4b1d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="59" y="33" width="55" height="20" backcolor="#99CCFF" uuid="0b1bed5f-6eab-47bb-bf85-f87c1e7b6337"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="59" y="33" width="55" height="20" uuid="3861b59d-fab2-4ba0-ae72-cc8ae7adeb99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NRP]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="180" y="33" width="71" height="20" backcolor="#99CCFF" uuid="5844b8d5-0d5e-4fb2-92d8-2b889698c32e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="33" width="71" height="20" uuid="69c00416-4e78-467b-8ecb-d7536cdd7669"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="251" y="33" width="230" height="20" backcolor="#99CCFF" uuid="3294c896-d949-4c7d-8139-511578d26320"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="251" y="33" width="230" height="20" uuid="cca50fe5-801a-4551-97be-7a61b460858a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Lokasi]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="481" y="33" width="74" height="20" backcolor="#99CCFF" uuid="355f4065-72e3-4605-966a-2c96c8169a51"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="481" y="33" width="74" height="20" uuid="039ff18e-e51f-49f1-ac16-92655cf1751a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Akses]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="60" height="20" uuid="76c95181-cac3-4486-815f-609134c70559"/>
+			</rectangle>
+			<textField>
+				<reportElement x="1" y="0" width="58" height="20" uuid="632a3d4b-22c4-48b8-9713-20d7a5a2b41d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="59" y="0" width="55" height="20" uuid="446c7a18-5bd3-46bf-9c90-70070595d36a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="59" y="0" width="55" height="20" uuid="2e9e46c5-b50b-4232-9e9a-a854db9e3cfe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nrp}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="114" y="0" width="66" height="20" uuid="ac711b39-859c-4634-87d2-a7556026a41e"/>
+			</rectangle>
+			<textField>
+				<reportElement x="114" y="0" width="66" height="20" uuid="81041404-0bf1-471f-ace4-c38f03449a87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="180" y="0" width="71" height="20" uuid="38329bfe-eb58-49af-a096-337f3e05d7a0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="180" y="0" width="71" height="20" uuid="fdddab9c-04b4-4d21-88d3-7f256cf5ff54"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jabatan}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="251" y="0" width="230" height="20" uuid="be3a077c-185c-49a8-8136-1d08bc607d24"/>
+			</rectangle>
+			<textField>
+				<reportElement x="251" y="0" width="230" height="20" uuid="1f03926f-feaa-4cce-a2a3-2045861de16e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_toko}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="481" y="0" width="74" height="20" uuid="1bed6122-8c17-449a-acbd-f82aea58b23f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="481" y="0" width="74" height="20" uuid="f9834122-d11d-4054-a53e-908465738d75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{akses}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="76" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="401" y="12" width="100" height="20" uuid="e2796e63-b833-49fc-b767-c769ce1a60cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="401" y="56" width="100" height="20" uuid="12079580-1361-4b74-8e30-f74824bec6c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Staff Admin SR]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

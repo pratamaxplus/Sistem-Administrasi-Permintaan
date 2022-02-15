@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02ca52ba-ca5a-4f54-b787-99aa9f36811a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT lokasi.s_location,lokasi.order_type, lokasi.nama_toko, lokasi.internal_order,format(budget_toko.saldo, 0)
+FROM lokasi, budget_toko
+WHERE lokasi.internal_order = budget_toko.internal_order]]>
+	</queryString>
+	<field name="s_location" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_toko" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="internal_order" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="format(budget_toko.saldo, 0)" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="0" width="300" height="46" uuid="45296468-2cb5-4756-9d2a-8844cdb63848"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Saldo Budget Toko]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="44" y="2" width="68" height="30" backcolor="#9999FF" uuid="5cebb260-674e-43d2-942d-8d08b2d5d396"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="44" y="2" width="68" height="30" uuid="feb335cb-eb21-4add-9dcc-f4cf2edd5d6c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Site Location]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="112" y="2" width="107" height="30" backcolor="#9999FF" uuid="60d39fa9-1aba-4917-bc19-e55f89553319"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="112" y="2" width="107" height="30" uuid="47a27ffb-0102-47de-9e26-77d43877c173"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Internal Order]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="219" y="2" width="198" height="30" backcolor="#9999FF" uuid="86c20064-48e4-490b-a40f-62495326f520"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="219" y="2" width="198" height="30" uuid="3e2265a9-15bc-461e-bf9a-e4cf60041898"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Toko]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="417" y="2" width="100" height="30" backcolor="#9999FF" uuid="80d65d9c-9294-49bb-be7e-f6fb45797452"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="417" y="2" width="100" height="30" uuid="e4790d57-8730-483f-8f03-6b5bfd13c647"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Saldo Budget]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="112" y="0" width="107" height="20" uuid="13e421e5-9ded-43a6-9ba8-578aa6e62202"/>
+			</rectangle>
+			<textField>
+				<reportElement x="112" y="0" width="107" height="20" uuid="aba1f135-e820-4476-a219-a09ddeebb63d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{internal_order}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="219" y="0" width="198" height="20" uuid="fbfd6aea-bff5-4b5d-9db1-6cdd37f4b7c0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="227" y="0" width="190" height="20" uuid="ec469e9b-9c98-468a-bec2-e0675119f20a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_toko}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="417" y="0" width="100" height="20" uuid="81f2f1d3-a8c3-4b74-a9de-df0526ca10a1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="44" y="0" width="68" height="20" uuid="02bdc258-ae5d-4531-97cb-bb3f84c695f6"/>
+			</rectangle>
+			<textField>
+				<reportElement x="44" y="0" width="68" height="20" uuid="3c3dc212-25ea-4003-aad6-ede7bbf8c52d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{s_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="100" height="20" uuid="3df26d25-afce-426b-8fee-9be95e3c0867"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{format(budget_toko.saldo, 0)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="89">
+			<staticText>
+				<reportElement x="92" y="26" width="383" height="63" uuid="620a5bbe-96f3-4acb-9c02-b6decab31e91"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Graha HERO, CBD Bintaro Jaya Sektor 7 Blok B7/A7 Pondok Jaya
+Pondok Aren, Tangerang Selatan 15224 - Indonesia Telp : +6221 8378 8000 Website: www.hero.co.id]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement x="286" y="41" width="100" height="20" uuid="65e8eb26-b184-46bd-bc09-a80280369848"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<line>
+				<reportElement x="306" y="118" width="139" height="1" uuid="4abd24ac-324f-4681-ad2b-6bc67298a7ef"/>
+			</line>
+			<staticText>
+				<reportElement x="306" y="118" width="200" height="20" uuid="8619d509-f22c-4cc5-85dd-be4a49cf4305"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Admin Service Request]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="376" y="41" width="100" height="20" uuid="a1513194-d57c-42cf-92e3-685559482b09"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy", new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="98" width="139" height="20" uuid="98695f6b-e0f7-4169-bca1-9163b490f760"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Adi Pratama]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
